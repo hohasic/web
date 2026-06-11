@@ -1,0 +1,77 @@
+#wrap {
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* 멀티 랭귀지 START */
+#wrap div.language {
+    text-align: right;
+}
+
+#wrap div.language select {
+    padding: 5px 8px;
+    border: 1px solid rgba(200, 200, 200, 1.0);
+    border-radius: 3px;
+}
+/* 멀티 랭귀지 END */
+
+/* 로고 START */
+#wrap div.logo {
+    margin: 60px 0 35px 0;
+}
+/* 로고 END */
+
+/* 로그인 양식 START */
+#wrap div.login_form {
+    width: 492px;
+    margin: 0 auto;
+    border: 1px solid #dadada;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#wrap div.login_form ul {
+    width: 450px;
+    margin: 0 auto;
+}
+
+#wrap div.login_form ul > li {
+    width: 150px;
+    border: 1px solid #dadada;
+    box-sizing: border-box;
+    padding: 10px;
+
+}
+
+#wrap div.login_form ul > li:nth-child(1) {
+    border-radius: 5px 0 0 5px;
+}
+
+#wrap div.login_form ul > li:nth-child(2) {
+    border-radius: 0;
+}
+
+#wrap div.login_form ul > li:nth-child(3) {
+    border-radius: 0 5px 5px 0;
+}
+
+#wrap div.login_form ul > li:hover {
+    background-color: rgba(200, 200, 200, .2);
+    cursor: pointer;
+}
+
+#wrap div.login_form > input {
+    width: 410px;
+    border: 1px solid #dadada;
+    padding: 15px 20px;
+    font-size: 1.1em;
+    outline: none;
+}
+
+#wrap div.login_form > input[name='m_id'] {
+    border-radius: 5px 5px 0 0;
+    margin-top: 15px;
+}
+
+/* 로그인 양식 END */
