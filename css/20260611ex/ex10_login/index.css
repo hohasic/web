@@ -74,4 +74,75 @@
     margin-top: 15px;
 }
 
+#wrap div.login_form > div {
+    width: 450px;
+    margin: 15px auto;
+    text-align: left;
+    font-size: .9em;
+    color: #5a5a5a;
+}
+
+#wrap div.login_form > div > button {
+    width: 450px;
+    margin-top: 22px;
+    color: #fff;
+    font-weight: bold;
+    background-color: #03c75a;
+    border: 0;
+    font-size: 1.5em;
+    padding: 10px 0;
+    border-radius: 6px;
+    cursor: pointer;
+}
 /* 로그인 양식 END */
+
+/* ID, PW 찾기 START */
+#wrap div.find_member {
+    width: 450px;
+    margin: 20px auto 40px;
+    font-size: .9em;
+    color: rgba(0, 0, 0, 0.3)
+}
+
+#wrap div.find_member > a {
+    margin: 0 5px;
+}
+/* ID, PW 찾기 END */
+
+/* 베너 START */
+#wrap div.ad {
+    width: 460px;
+    margin: 0 auto 60px;
+}
+/* 베너 END */
+
+/* office START */
+#wrap div.office {
+    width: 500px;
+    margin: 0 auto 60px;
+    color: rgba(100, 100, 100, .8);
+}
+
+#wrap div.office > p {
+    margin-top: 10px;
+}
+
+#wrap div.office > p:nth-child(1) a {
+    font-size: .9em;
+    color: rgba(100, 100, 100, .3);
+}
+
+#wrap div.office > p:nth-child(2) {
+    font-size: .9em;
+}
+
+#wrap div.office > p:nth-child(2) > img {
+    min-width: 90px;
+    max-width: 90px;
+    vertical-align: middle;
+}
+
+#wrap div.office > p:nth-child(2) > span {
+    margin-left: 10px;
+}
+/* office END */
