@@ -11,6 +11,7 @@ function setMenuByStatus(menuStatusNo) {
             document.querySelector('div.menu_wrap a.sign_up').style.display = 'inline-block';
             document.querySelector('div.menu_wrap a.sign_in').style.display = 'inline-block';
             document.querySelector('div.menu_wrap a.sign_out').style.display = 'none';
+            document.querySelector('div.menu_wrap a.delete').style.display = 'none';
 
             break;
 
@@ -19,6 +20,7 @@ function setMenuByStatus(menuStatusNo) {
             document.querySelector('div.menu_wrap a.sign_up').style.display = 'none';
             document.querySelector('div.menu_wrap a.sign_in').style.display = 'none';
             document.querySelector('div.menu_wrap a.sign_out').style.display = 'inline-block';
+            document.querySelector('div.menu_wrap a.delete').style.display = 'inline-block';
 
             break;
     }

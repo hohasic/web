@@ -27,6 +27,16 @@ function searchMember(id, pw) {
 
 }
 
+function removeMember() {
+    console.log('removeMember() CALLED!!')
+
+    // memberDB 에서 signInedMemberId를 지운다.
+    memberDB.delete(signInedMemberId);
+
+    console.log('memberDB: ', memberDB);
+
+}
+
 function addDiary(txt) {
     console.log('addDiary() CALLED!!');
 

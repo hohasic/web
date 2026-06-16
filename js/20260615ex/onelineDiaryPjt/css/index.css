@@ -33,9 +33,11 @@
     text-decoration: none;
 }
 
-#wrap > div.menu_wrap a.sign_out {
+#wrap > div.menu_wrap a.sign_out,
+#wrap > div.menu_wrap a.delete {
     display: none;
 }
+
 /* 메뉴 END */
 
 /* 회원 가입 START */

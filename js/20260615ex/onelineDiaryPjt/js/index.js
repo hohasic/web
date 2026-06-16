@@ -50,6 +50,21 @@ function addEvents() {
 
     });
 
+    let deleteMenuBtn = document.querySelector('div.menu_wrap a.delete');
+    deleteMenuBtn.addEventListener('click', function() {
+        console.log('deleteMenuBtn CLICKED!!');
+        
+        removeMember();
+        alert('CONGRATURATION REMOVE!!');
+
+        signInedMemberId == '';
+
+        setMenuByStatus(SIGN_OUT_STATUS);
+
+        showSelectedView(HOME_VIEW);
+
+    });
+
     let writeMenuBtn = document.querySelector('div.menu_wrap a.write');
     writeMenuBtn.addEventListener('click', function() {
         console.log('writeMenuBtn CLICKED!!');
@@ -132,9 +147,12 @@ function addEvents() {
         console.log('writeBtn CLICKED!!');
 
         let txt = document.querySelector('div.write_wrap input').value;
-        addDiary(txt);
+
+        addDiary(getCurrentDate() + txt);
 
         removeValue([document.querySelector('div.write_wrap input')]);
+
+        showSelectedView(LIST_VIEW);
 
     });
 
