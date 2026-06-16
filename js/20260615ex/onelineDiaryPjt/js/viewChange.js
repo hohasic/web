@@ -24,13 +24,6 @@ function showSelectedView(viewNo) {
     console.log('showSelectedView() CALLED!!');
 
     switch(viewNo) {
-        case HOME_VIEW:
-            signUpWrap.style.display = 'none';
-            signInWrap.style.display = 'none';
-            writeWrap.style.display = 'none';
-            listWrap.style.display = 'none';
-            break;
-            
         case SIGN_UP_VIEW: // sign up
             signUpWrap.style.display = 'block';
             signInWrap.style.display = 'none';
@@ -45,6 +38,7 @@ function showSelectedView(viewNo) {
             listWrap.style.display = 'none';
             break;
 
+        case HOME_VIEW:     // sign ined  ---> go home
         case SIGN_OUT_VIEW: // sign out
             signUpWrap.style.display = 'none';
             signInWrap.style.display = 'none';
