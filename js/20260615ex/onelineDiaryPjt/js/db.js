@@ -1,4 +1,5 @@
 const memberDB = new Map();
+const diaryDB = new Map();
 
 function addMember(id, pw, mail) {
     console.log('addMember() CALLED!!');
@@ -8,6 +9,8 @@ function addMember(id, pw, mail) {
             'u_pw': pw,
             'u_mail': mail
         });
+
+    diaryDB.set(id, []);
 
 }
 
@@ -22,4 +25,19 @@ function searchMember(id, pw) {
 
    return false;
 
+}
+
+function addDiary(txt) {
+    console.log('addDiary() CALLED!!');
+
+    let diaryArray = diaryDB.get(signInedMemberId);
+    diaryArray.push(txt);
+
+    console.log('diaryDB: ', diaryDB);
+
+}
+
+function searchDiary() {
+    console.log('searchDiary() CALLED!!');
+    
 }

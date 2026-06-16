@@ -8,8 +8,8 @@ function setMenuByStatus(menuStatusNo) {
     switch(menuStatusNo) {
         case SIGN_OUT_STATUS:       // 로그아웃 상태
 
-            document.querySelector('div.menu_wrap a.sign_up').style.display = 'block';
-            document.querySelector('div.menu_wrap a.sign_in').style.display = 'block';
+            document.querySelector('div.menu_wrap a.sign_up').style.display = 'inline-block';
+            document.querySelector('div.menu_wrap a.sign_in').style.display = 'inline-block';
             document.querySelector('div.menu_wrap a.sign_out').style.display = 'none';
 
             break;
@@ -18,7 +18,7 @@ function setMenuByStatus(menuStatusNo) {
             
             document.querySelector('div.menu_wrap a.sign_up').style.display = 'none';
             document.querySelector('div.menu_wrap a.sign_in').style.display = 'none';
-            document.querySelector('div.menu_wrap a.sign_out').style.display = 'block';
+            document.querySelector('div.menu_wrap a.sign_out').style.display = 'inline-block';
 
             break;
     }

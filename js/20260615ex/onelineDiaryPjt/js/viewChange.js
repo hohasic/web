@@ -38,7 +38,10 @@ function showSelectedView(viewNo) {
             break;
 
         case SIGN_OUT_VIEW: // sign out
-
+            signUpWrap.style.display = 'none';
+            signInWrap.style.display = 'none';
+            writeWrap.style.display = 'none';
+            listWrap.style.display = 'none';
             break;
 
         case WRITE_VIEW: // write

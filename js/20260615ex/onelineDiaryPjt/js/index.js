@@ -8,9 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
 function init() {
     console.log('init() CALLED!!');
 
-    // set dumy data
-
-
     // 뷰와 관련된 내용
     initViews();
 
@@ -43,6 +40,12 @@ function addEvents() {
     signOutMenuBtn.addEventListener('click', function() {
         console.log('signOutMenuBtn CLICKED!!');
         
+        signInedMemberId = '';
+
+        // 메뉴 체인지
+        setMenuByStatus(SIGN_OUT_STATUS);
+
+        // 뷰 체인지
         showSelectedView(SIGN_OUT_VIEW);
 
     });
@@ -51,6 +54,12 @@ function addEvents() {
     writeMenuBtn.addEventListener('click', function() {
         console.log('writeMenuBtn CLICKED!!');
 
+        if (signInedMemberId === '') {
+            alert('Please SIGN IN!!');
+            showSelectedView(SIGN_IN_VIEW);
+            return;
+        }
+        
         showSelectedView(WRITE_VIEW);
         
     });
@@ -103,6 +112,17 @@ function addEvents() {
         }
 
         removeValue([uIdEle, uPwEle]);
+
+    });
+
+    let writeBtn = document.querySelector('div.write_wrap button');
+    writeBtn.addEventListener('click', function() {
+        console.log('writeBtn CLICKED!!');
+
+        let txt = document.querySelector('div.write_wrap input').value;
+        addDiary(txt);
+
+        removeValue([document.querySelector('div.write_wrap input')]);
 
     });
 
