@@ -101,7 +101,11 @@ function addEvents() {
             signInedMemberId = uIdEle.value;
             alert('SIGNIN SUCCESS!!');
 
+            // 메뉴 체인지
             setMenuByStatus(SIGN_IN_STATUS);
+            
+            // 뷰 체인지
+            showSelectedView(HOME_VIEW);
 
         } else {
             signInedMemberId = '';
@@ -110,7 +114,7 @@ function addEvents() {
             setMenuByStatus(SIGN_OUT_STATUS);
 
         }
-
+        
         removeValue([uIdEle, uPwEle]);
 
     });

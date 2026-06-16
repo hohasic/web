@@ -3,6 +3,7 @@ const SIGN_IN_VIEW      = 2;
 const SIGN_OUT_VIEW     = 3;
 const WRITE_VIEW        = 4;
 const LIST_VIEW         = 5;
+const HOME_VIEW         = 6;
 
 let signUpWrap = '';
 let signInWrap = '';
@@ -23,6 +24,13 @@ function showSelectedView(viewNo) {
     console.log('showSelectedView() CALLED!!');
 
     switch(viewNo) {
+        case HOME_VIEW:
+            signUpWrap.style.display = 'none';
+            signInWrap.style.display = 'none';
+            writeWrap.style.display = 'none';
+            listWrap.style.display = 'none';
+            break;
+            
         case SIGN_UP_VIEW: // sign up
             signUpWrap.style.display = 'block';
             signInWrap.style.display = 'none';
