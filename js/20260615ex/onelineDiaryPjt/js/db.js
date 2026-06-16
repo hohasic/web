@@ -37,7 +37,10 @@ function addDiary(txt) {
 
 }
 
-function searchDiary() {
-    console.log('searchDiary() CALLED!!');
+function searchDiaries() {
+    console.log('searchDiaries() CALLED!!');
+
+    let diaryArr = diaryDB.get(signInedMemberId); // Array
+    return diaryArr;
     
 }

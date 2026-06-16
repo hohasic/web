@@ -68,6 +68,14 @@ function addEvents() {
     listMenuBtn.addEventListener('click', function() {
         console.log('listMenuBtn CLICKED!!');
 
+        if (signInedMemberId === '') {
+            alert('Please SIGN IN!!');
+            showSelectedView(SIGN_IN_VIEW);
+            return;
+        }
+
+        listUpDiaries();
+
         showSelectedView(LIST_VIEW);
         
     });
@@ -140,3 +148,10 @@ function removeValue(eles) {
 
 }
 
+function listUpDiaries() {
+    console.log('listUpDiaries() CALLED!!');
+
+    let diaryArr = searchDiaries();
+    console.log('diaryArr: ', diaryArr);
+
+}
