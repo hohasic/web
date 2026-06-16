@@ -1,13 +1,13 @@
-const SIGN_UP_VIEW          = 1;
-const SIGN_IN_VIEW          = 2;
-const SIGN_OUT_VIEW         = 3;
-const DIARY_WRITE_VIEW      = 4;
-const DIARY_LIST_VIEW       = 5;
+const SIGN_UP_VIEW      = 1;
+const SIGN_IN_VIEW      = 2;
+const SIGN_OUT_VIEW     = 3;
+const WRITE_VIEW        = 4;
+const LIST_VIEW         = 5;
 
-signUpWrap = '';
-signInWrap = '';
-writeWrap = '';
-listWrap = '';
+let signUpWrap = '';
+let signInWrap = '';
+let writeWrap = '';
+let listWrap = '';
 
 function initViews() {
     console.log('initViews() CALLED!!');
@@ -16,44 +16,39 @@ function initViews() {
     signInWrap = document.querySelector('div.sign_in_wrap');
     writeWrap = document.querySelector('div.write_wrap');
     listWrap = document.querySelector('div.list_wrap');
-    
+
 }
 
-// 사용자 원하는 뷰를 보이게 할거예요~~
 function showSelectedView(viewNo) {
     console.log('showSelectedView() CALLED!!');
 
     switch(viewNo) {
-        case SIGN_UP_VIEW:
-            // 회원 가입 화면 보이게 하자!
+        case SIGN_UP_VIEW: // sign up
             signUpWrap.style.display = 'block';
             signInWrap.style.display = 'none';
             writeWrap.style.display = 'none';
             listWrap.style.display = 'none';
             break;
 
-        case SIGN_IN_VIEW:
-            // 로그인 화면 보이게 하자!
+        case SIGN_IN_VIEW: // sign in
             signUpWrap.style.display = 'none';
             signInWrap.style.display = 'block';
             writeWrap.style.display = 'none';
             listWrap.style.display = 'none';
             break;
 
-        case SIGN_OUT_VIEW:
-            
+        case SIGN_OUT_VIEW: // sign out
+
             break;
 
-        case DIARY_WRITE_VIEW:
-            // 일기 작성 화면 보이게 하자!
+        case WRITE_VIEW: // write
             signUpWrap.style.display = 'none';
             signInWrap.style.display = 'none';
             writeWrap.style.display = 'block';
             listWrap.style.display = 'none';
             break;
 
-        case DIARY_LIST_VIEW:
-            // 일기 리스트 화면 보이게 하자!
+        case LIST_VIEW: // list
             signUpWrap.style.display = 'none';
             signInWrap.style.display = 'none';
             writeWrap.style.display = 'none';
@@ -61,4 +56,5 @@ function showSelectedView(viewNo) {
             break;
     }
 
+    
 }

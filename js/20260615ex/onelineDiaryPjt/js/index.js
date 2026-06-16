@@ -8,7 +8,13 @@ document.addEventListener('DOMContentLoaded', function() {
 function init() {
     console.log('init() CALLED!!');
 
+    // set dumy data
+
+
+    // 뷰와 관련된 내용
     initViews();
+
+    // 이벤트와 관련된 내용
     addEvents();
 
 }
@@ -16,25 +22,26 @@ function init() {
 function addEvents() {
     console.log('addEvents() CALLED!!');
 
+    // MENU BUTTON EVENT SATRT
     let signUpMenuBtn = document.querySelector('div.menu_wrap a.sign_up');
     signUpMenuBtn.addEventListener('click', function() {
-        console.log('signUpMenuBtn CLICEKD!!');
-        
+        console.log('signUpMenuBtn CLICKED!!');
+
         showSelectedView(SIGN_UP_VIEW);
 
     });
 
     let signInMenuBtn = document.querySelector('div.menu_wrap a.sign_in');
     signInMenuBtn.addEventListener('click', function() {
-        console.log('signInMenuBtn CLICEKD!!');
-        
-        showSelectedView(SIGN_IN_VIEW);
+        console.log('signInMenuBtn CLICKED!!');
 
+        showSelectedView(SIGN_IN_VIEW);
+        
     });
 
     let signOutMenuBtn = document.querySelector('div.menu_wrap a.sign_out');
     signOutMenuBtn.addEventListener('click', function() {
-        console.log('signOutMenuBtn CLICEKD!!');
+        console.log('signOutMenuBtn CLICKED!!');
         
         showSelectedView(SIGN_OUT_VIEW);
 
@@ -42,38 +49,70 @@ function addEvents() {
 
     let writeMenuBtn = document.querySelector('div.menu_wrap a.write');
     writeMenuBtn.addEventListener('click', function() {
-        console.log('writeMenuBtn CLICEKD!!');
-        
-        showSelectedView(DIARY_WRITE_VIEW);
+        console.log('writeMenuBtn CLICKED!!');
 
+        showSelectedView(WRITE_VIEW);
+        
     });
 
     let listMenuBtn = document.querySelector('div.menu_wrap a.list');
     listMenuBtn.addEventListener('click', function() {
-        console.log('listMenuBtn CLICEKD!!');
-        
-        showSelectedView(DIARY_LIST_VIEW);
+        console.log('listMenuBtn CLICKED!!');
 
+        showSelectedView(LIST_VIEW);
+        
     });
+    // MENU BUTTON EVENT END
 
     let signUpBtn = document.querySelector('div.sign_up_wrap input[type="button"]');
     signUpBtn.addEventListener('click', function() {
-        console.log('signUpBtn CALLED!!');
+        console.log('signUpBtn CLICKED!!');
 
-        let u_id = document.querySelector('div.sign_up_wrap input[name="u_id"]').value;
-        let u_pw = document.querySelector('div.sign_up_wrap input[name="u_pw"]').value;
-        let u_mail = document.querySelector('div.sign_up_wrap input[name="u_mail"]').value;
+        let uIdEle = document.querySelector('div.sign_up_wrap input[name="u_id"]');
+        let uPwEle = document.querySelector('div.sign_up_wrap input[name="u_pw"]');
+        let uMailEle = document.querySelector('div.sign_up_wrap input[name="u_mail"]');
 
-        addMember(u_id, u_pw, u_mail);
+        addMember(uIdEle.value, uPwEle.value, uMailEle.value);
 
-        alert('SIGN UP SUCCESS!!');
+        alert('SIGNUP SUCCESS!!');
 
-        document.querySelector('div.sign_up_wrap input[name="u_id"]').value = '';
-        document.querySelector('div.sign_up_wrap input[name="u_pw"]').value = '';
-        document.querySelector('div.sign_up_wrap input[name="u_mail"]').value = '';
+        removeValue([uIdEle, uPwEle, uMailEle]);
 
     });
 
+    let signInBtn = document.querySelector('div.sign_in_wrap input[type="button"]');
+    signInBtn.addEventListener('click', function() {
+        console.log('signInBtn CLICKED!!');
 
+        let uIdEle = document.querySelector('div.sign_in_wrap input[name="u_id"]');
+        let uPwEle = document.querySelector('div.sign_in_wrap input[name="u_pw"]');
+
+        let isMember = searchMember(uIdEle.value, uPwEle.value);
+        if (isMember) {
+            signInedMemberId = uIdEle.value;
+            alert('SIGNIN SUCCESS!!');
+
+            setMenuByStatus(SIGN_IN_STATUS);
+
+        } else {
+            signInedMemberId = '';
+            alert('SIGNIN FAIL!!');
+
+            setMenuByStatus(SIGN_OUT_STATUS);
+
+        }
+
+        removeValue([uIdEle, uPwEle]);
+
+    });
 
 }
+
+function removeValue(eles) {
+    console.log('removeValue() CALLED!!');
+
+    for(let i = 0; i < eles.length; i++)
+        eles[i].value = '';
+
+}
+
