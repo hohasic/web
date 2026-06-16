@@ -151,7 +151,20 @@ function removeValue(eles) {
 function listUpDiaries() {
     console.log('listUpDiaries() CALLED!!');
 
+    listWrap.textContent = '';
+
     let diaryArr = searchDiaries();
-    console.log('diaryArr: ', diaryArr);
+    
+    for (let i = 0; i < diaryArr.length; i++) {
+
+        let tpl = document.querySelector('#list_item');
+        let clone = document.importNode(tpl.content, true);
+        let txt = clone.querySelector('div.txt');
+        txt.textContent = diaryArr[i];
+
+        listWrap.prepend(clone);
+
+    }    
+
 
 }

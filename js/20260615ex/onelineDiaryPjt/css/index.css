@@ -81,4 +81,13 @@
     text-align: center;
     display: none;
 }
+
+#wrap > div.list_wrap div {
+    border: 1px solid #dadada;
+    border-radius: 7px;
+    width: 600px;
+    padding: 10px;
+    margin: 2px auto;
+}
+
 /* 일기 리스트 END */
